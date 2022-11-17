@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/css.gg/icons/all.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Mukta', sans-serif;
+  @apply bg-gray-900/95
+}
+
+/* Toggle A */
+input:checked~.dot {
+  transform: translateX(100%);
+  @apply bg-green-400;
+}
+
+input:checked~.active {
+  @apply font-bold text-green-400/90;
+}
+
+.card:hover i {
+  @apply text-blue-100
+}
