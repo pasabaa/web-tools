@@ -28,11 +28,11 @@ export const HomePage = () => {
       url: '/color'
     },
     {
-      title: 'Otras herramientas',
+      title: 'Más Categorias',
       description: 'Descubre herramientas que te pueden ser de utilidad, además de aportar a tu productividad.',
       icon: 'keyboard',
       textButton: 'Abrir aplicación',
-      url: '/other'
+      url: '/categories'
     }
   ]
 

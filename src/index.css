@@ -22,3 +22,7 @@ input:checked~.active {
 .card:hover i {
   @apply text-blue-100
 }
+
+.active {
+  @apply bg-gray-800
+}
