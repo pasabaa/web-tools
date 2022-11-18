@@ -4,7 +4,7 @@ import { Footer } from './layout/footer';
 import { Navbar } from './layout/navbar';
 import { ContactPage } from './pages/contact';
 import { HomePage } from './pages/home';
-import { ColorPage, ImagePage, TextPage, CategoriesPage } from './pages/tools';
+import { ColorPage, ImagePage, TextPage, CategoriesPage, LoremTool } from './pages/tools';
 
 function App() {
 
@@ -19,6 +19,7 @@ function App() {
         <Route path='/text' element={<TextPage />} />
         <Route path='/categories' element={<CategoriesPage />} />
         <Route path='/contact' element={<ContactPage />} />
+        <Route path='/text/lorem' element={<LoremTool />} />
       </Routes>
     <Footer />
     </Container>

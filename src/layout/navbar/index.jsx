@@ -26,7 +26,7 @@ export const Navbar = () => {
             <div className='me-auto'>
               <Link className='py-1 px-3 rounded-full' to={'/'}>Home</Link>
             </div>
-            <div className='ms-auto'>
+            <div className='ms-auto flex gap-2'>
               {
                 links.map(link => {
                   return(
