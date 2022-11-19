@@ -4,6 +4,7 @@ import { TextPage } from "./text";
 import { CategoriesPage } from "./categories";
 import { LoremTool } from "./lorem";
 import { CaseTool } from "./case";
+import { CountTool } from "./count";
 
 export {
     ColorPage,
@@ -11,5 +12,6 @@ export {
     TextPage,
     CategoriesPage,
     LoremTool,
-    CaseTool
+    CaseTool,
+    CountTool
 }

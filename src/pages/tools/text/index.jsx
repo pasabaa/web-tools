@@ -11,7 +11,7 @@ export const TextPage = () => {
       icon: 'format-uppercase',
       description: 'Convierte diferente texto en mayúsculas o minúsculas.',
       textButton: 'Abrir',
-      url: '/text/lorem'
+      url: '/text/case'
     },
     {
       title: 'Generador Lorem',
@@ -25,7 +25,7 @@ export const TextPage = () => {
       icon: 'math-plus',
       description: 'Determina el número de palabras de un texto.',
       textButton: 'Abrir',
-      url: '/color'
+      url: '/text/count'
     },
     {
       title: 'Textos gradiantes',
