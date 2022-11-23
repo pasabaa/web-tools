@@ -78,8 +78,16 @@ export const GradientTool = () => {
               <h1 className="text-xl font-bold text-gray-600 mb-4">Propiedades</h1>
 
               <div className='flex flex-col gap-4'>
-                <input type="color" name="" id="" onChange={(e)=>{setColorTo(e.target.value)}} />
-                <input type="color" name="" id="" onChange={(e)=>{setColorFrom(e.target.value)}} />
+                <div className='flex items-center justify-between'>
+                  <label className="text-sm" htmlFor={'gradient-to'}>De color</label>
+                  <input className='appearance-none w-10 h-10 rounded-sm border-none cursor-pointer bg-transparent' type="color" id="gradient-to" onChange={(e)=>{setColorTo(e.target.value)}} />
+                </div>
+                <div className='flex items-center justify-between'>
+                  <label className="text-sm" htmlFor={'gradient-from'}>A color</label>
+                  <input className='appearance-none w-10 h-10 rounded-sm border-none cursor-pointer bg-transparent' type="color" id="gradient-from" onChange={(e)=>{setColorFrom(e.target.value)}} />
+                </div>
+
+
                 <InputRange 
                   id={1} 
                   min={0} 
