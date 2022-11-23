@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Toggle } from '../../../components/toggle'
 import { LoremIpsum } from 'react-lorem-ipsum'
 import { AppContainer } from '../../../layout/container'
 import { InputRange } from '../../../components/range'
 import { Nav } from '../../../components/nav'
+import { copyTextToClipboard } from '../../../Utils';
 
 export const LoremTool = () => {
 
@@ -12,6 +13,10 @@ export const LoremTool = () => {
     const [sentences, setSentences] = useState(8);
     const [initLorem, setInitLorem] = useState(true);
     const [isRandom, setIsRandom] = useState(true);
+
+    const [text, setText] = useState('');
+
+    const [isCopied, setIsCopied] = useState();
 
     const ranges = [
       {
@@ -51,6 +56,28 @@ export const LoremTool = () => {
         setIsRandom(!isRandom);
     }
 
+    const handleCopyClick = () => {
+      copyTextToClipboard(text)
+        .then(() => {
+          setIsCopied(true);
+          setTimeout(() => {
+            setIsCopied(false);
+          }, 600);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+
+    useEffect(()=> {
+
+      setText(document.querySelector('.select-all').textContent);
+
+    }, [words, paragraphs, sentences, isRandom, initLorem])
+
+
+
 return (
 <>
 <Nav/>  
@@ -89,8 +116,13 @@ return (
       </div>
       <div className="flex flex-col gap-4 divide-y rounded-sm p-5 text-gray-400 border border-dotted">
         <div className="mb-4 flex items-center gap-4">
-          <span className="h-4 w-4 rounded-full bg-red-500 animate-pulse"></span>
-          <h1 className="text-base font-bold uppercase">Live Preview</h1>
+          <button 
+                onClick={handleCopyClick} 
+                className="flex justify-between rounded-sm border py-2 px-4 bg-black/90 hover:bg-black text-xs font-bold text-gray-100">
+                  <span>
+                    {isCopied ? 'Copiado' : 'Copiar'}
+                  </span>
+                </button>
         </div>
         <div className="pt-4">
           <h1 className="text-4xl font-bold text-gray-900">Lorem Ipsum Dolor</h1>

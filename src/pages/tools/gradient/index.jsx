@@ -2,13 +2,30 @@ import React, { useEffect, useState } from 'react'
 import { Nav } from '../../../components/nav'
 import { InputRange } from '../../../components/range';
 import { AppContainer } from '../../../layout/container'
+import { copyTextToClipboard } from '../../../Utils';
 
 export const GradientTool = () => {
-
 
   const [colorTo, setColorTo] = useState('#201a23');
   const [colorFrom, setColorFrom] = useState('#67606A');
   const [degColor, setDegColor] = useState(0);
+
+  const code = `background-image: linear-gradient(${degColor+'deg'}, ${colorTo}, ${colorFrom}); background-clip: text; color: transparent;`;
+
+  const [isCopied, setIsCopied] = useState();
+
+  const handleCopyClick = () => {
+    copyTextToClipboard(code)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 600);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   useEffect(()=>{
 
@@ -36,11 +53,24 @@ export const GradientTool = () => {
 
             <div className='p-8 border border-dotted grid grid-cols-2 sm:grid-cols-1'>
               <div className='text-gray-400'>
-                <h1 className='text-7xl font-bold gradient-text'>¡Este es un increíble ejemplo!</h1>
+                <h1 className='text-7xl font-bold gradient-text'>¡Este es un increíble título!</h1>
                 <p className='mt-4 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et cum sunt cumque. Delectus explicabo repellendus magnam ipsa autem odio error ab, hic est obcaecati aspernatur possimus suscipit et eos itaque quam laborum, cumque reprehenderit provident iste alias voluptates consequatur enim. Delectus placeat maxime nisi iusto consectetur perferendis mollitia reprehenderit!</p>
               </div>
-              <div className='flex items-center justify-center'>
-                <img className='rounded-sm' src="https://picsum.photos/1920/1080?grayscale" alt="" />
+              <div className='flex items-center justify-start bg-gray-50 rounded-sm border border-dotted text-gray-900 p-8'>
+                <pre className='whitespace-pre-wrap'>
+                  <code>
+                    {code}
+                  </code>
+                </pre>
+              </div>
+              <div className='col-end-3 col-span-1 mt-4'>
+                <button 
+                onClick={handleCopyClick} 
+                className="flex justify-between rounded-sm border py-2 px-4 bg-black/90 hover:bg-black text-xs font-bold text-gray-100">
+                  <span>
+                    {isCopied ? 'Copiado' : 'Copiar'}
+                  </span>
+                </button>
               </div>
             </div>
 

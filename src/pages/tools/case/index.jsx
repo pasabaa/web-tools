@@ -1,11 +1,27 @@
 import React, { useState } from 'react'
 import { Nav } from '../../../components/nav'
 import { AppContainer } from '../../../layout/container'
+import { copyTextToClipboard } from '../../../Utils';
 
 export const CaseTool = () => {
 
   const [textIn, setTextIn] = useState('');
   const [isCase, setIsCase] = useState('uppercase')
+
+  const [isCopied, setIsCopied] = useState();
+
+  const handleCopyClick = () => {
+    copyTextToClipboard(textIn)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 600);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <>
@@ -32,7 +48,13 @@ export const CaseTool = () => {
             <h1 className="text-xl font-bold text-gray-600">Texto de salida</h1>
             <textarea className={`relative block h-auto w-full rounded-sm p-4 select-all ${isCase} border border-dotted bg-gray-50 text-gray-400 focus:outline-none`} defaultValue={textIn}></textarea>
             <div className="w-full">
-              <button className="flex justify-between rounded-sm border py-2 px-4 bg-black/90 hover:bg-black text-xs font-bold text-gray-100">Copiar</button>
+            <button 
+                onClick={handleCopyClick} 
+                className="flex justify-between rounded-sm border py-2 px-4 bg-black/90 hover:bg-black text-xs font-bold text-gray-100">
+                  <span>
+                    {isCopied ? 'Copiado' : 'Copiar'}
+                  </span>
+            </button>
             </div>
           </div>
         </div>

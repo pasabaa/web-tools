@@ -32,3 +32,7 @@ export function countAcc(str) {
 
     return numOfVocals;
 }
+
+export function copyTextToClipboard(text) {
+    return navigator.clipboard.writeText(text);
+}
