@@ -10,8 +10,8 @@ return (
             className="sr-only" 
             onChange={handle} 
             checked={checked} />
-        <div className="h-2 w-6 rounded-full bg-gray-600 shadow-inner"></div>
-        <div className="checked dot absolute -left-1 -top-1 h-4 w-4 rounded-full bg-gray-100 transition"></div>
+        <div className="h-2 w-6 rounded-sm bg-black shadow-inner"></div>
+        <div className="checked dot absolute -left-1 -top-1 h-4 w-4 bg-gray-100 transition"></div>
         <div className="checked ml-4 -mt-1.5 text-sm">
             <p className="transition ease-in-out">{text}</p>
         </div>

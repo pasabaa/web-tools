@@ -30,7 +30,7 @@ export const Navbar = () => {
               {
                 links.map(link => {
                   return(
-                    <NavLink key={uuid()} className={({isActive}) => (isActive ? 'active py-1 px-3 rounded-full transition' : 'py-1 px-3 rounded-full transition')} to={link.url}>{link.name}</NavLink>
+                    <NavLink key={uuid()} className={({isActive}) => (isActive ? 'active py-1 px-3 rounded-sm transition' : 'py-1 px-3 rounded-sm transition')} to={link.url}>{link.name}</NavLink>
                   )
                 })
               }

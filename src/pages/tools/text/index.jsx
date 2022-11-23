@@ -8,35 +8,35 @@ export const TextPage = () => {
   const cards = [
     {
       title: 'Mayus. a Minus.',
-      icon: 'format-uppercase',
+      icon: 'bi-type',
       description: 'Convierte diferente texto en mayúsculas o minúsculas.',
       textButton: 'Abrir',
       url: '/text/case'
     },
     {
       title: 'Generador Lorem',
-      icon: 'format-left',
+      icon: 'bi-body-text',
       description: 'Genera texto en lorem para pruebas de oraciones.',
       textButton: 'Abrir',
       url: '/text/lorem'
     },
     {
       title: 'Contador de palabras',
-      icon: 'math-plus',
+      icon: 'bi-chat-right-dots-fill',
       description: 'Determina el número de palabras de un texto.',
       textButton: 'Abrir',
       url: '/text/count'
     },
     {
       title: 'Textos gradiantes',
-      icon: 'format-color',
+      icon: 'bi-fonts',
       description: 'Genera espectaculares letras gradientes.',
       textButton: 'Abrir',
-      url: '/color'
+      url: '/text/gradient'
     },
     {
       title: 'Prueba de fuentes',
-      icon: 'format-text',
+      icon: 'bi-journal-text',
       description: 'Prueba diferentes tipos de fuentes y escoje tu favorita.',
       textButton: 'Abrir',
       url: '/color'
@@ -51,7 +51,7 @@ export const TextPage = () => {
             <p className='text-gray-400 mt-4 w-6/12 sm:w-full'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut molestias, explicabo omnis, quasi quia accusamus vel blanditiis quibusdam provident incidunt adipisci, consectetur architecto modi! Voluptates.</p>
         </div>
         {/* Cards */}
-        <div className='grid grid-cols-4 sm:grid-cols-1 gap-8'>
+        <div className='grid grid-cols-4 sm:grid-cols-1 gap-8 border border-dotted'>
             
             {
               cards.map(card=>{

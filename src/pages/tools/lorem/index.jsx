@@ -57,9 +57,9 @@ return (
 <AppContainer>
   <div className="w-full mt-12">
     <div className="grid w-full grid-cols-2 gap-8">
-      <div className="text-gray-400">
+      <div className="text-gray-600">
         <div className="mb-12 w-full">
-          <h1 className="text-5xl font-bold text-gray-100">Generador Lorem</h1>
+          <h1 className="text-5xl font-bold text-gray-900">Generador Lorem</h1>
           <p className="mt-5 leading-relaxed">Genera texto de relleno para ver una idea de como se visualiza un texto en tu sitio.</p>
         </div>
         <div className="flex flex-col gap-8">
@@ -87,13 +87,13 @@ return (
           
         </div>
       </div>
-      <div className="flex flex-col gap-4 divide-y rounded-md bg-gray-900 p-5 text-gray-400">
+      <div className="flex flex-col gap-4 divide-y rounded-sm p-5 text-gray-400 border border-dotted">
         <div className="mb-4 flex items-center gap-4">
           <span className="h-4 w-4 rounded-full bg-red-500 animate-pulse"></span>
-          <h1 className="text-xl font-bold">Live Preview</h1>
+          <h1 className="text-base font-bold uppercase">Live Preview</h1>
         </div>
         <div className="pt-4">
-          <h1 className="text-3xl font-bold text-gray-100">Lorem Ipsum Dolor</h1>
+          <h1 className="text-4xl font-bold text-gray-900">Lorem Ipsum Dolor</h1>
           <div className='select-all lorem mt-4'>
                 <LoremIpsum
                     p={paragraphs}

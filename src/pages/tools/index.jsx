@@ -1,4 +1,4 @@
-import { ColorPage } from "./color";
+import { GradientTool} from "./gradient";
 import { ImagePage } from "./image";
 import { TextPage } from "./text";
 import { CategoriesPage } from "./categories";
@@ -7,7 +7,7 @@ import { CaseTool } from "./case";
 import { CountTool } from "./count";
 
 export {
-    ColorPage,
+    GradientTool,
     ImagePage,
     TextPage,
     CategoriesPage,

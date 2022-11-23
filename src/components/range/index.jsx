@@ -11,7 +11,7 @@ return (
         step={props.step} 
         defaultValue={props.min}
         onChange={(e)=> {props.event(e.target.value)}}
-        className="h-1 w-full cursor-pointer appearance-none rounded-lg bg-gray-600" type="range" />
+        className="h-1 w-full cursor-pointer appearance-none rounded-lg bg-black" type="range" />
 </div>
 )
 }

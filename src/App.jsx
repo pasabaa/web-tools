@@ -4,7 +4,7 @@ import { Footer } from './layout/footer';
 import { Navbar } from './layout/navbar';
 import { ContactPage } from './pages/contact';
 import { HomePage } from './pages/home';
-import { ColorPage, ImagePage, TextPage, CategoriesPage, LoremTool, CaseTool, CountTool } from './pages/tools';
+import { GradientTool, ImagePage, TextPage, CategoriesPage, LoremTool, CaseTool, CountTool } from './pages/tools';
 
 function App() {
 
@@ -14,7 +14,6 @@ function App() {
     <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/color' element={<ColorPage />} />
         <Route path='/image' element={<ImagePage />} />
         <Route path='/text' element={<TextPage />} />
         <Route path='/categories' element={<CategoriesPage />} />
@@ -22,6 +21,7 @@ function App() {
         <Route path='/text/lorem' element={<LoremTool />} />
         <Route path='/text/case' element={<CaseTool />} />
         <Route path='/text/count' element={<CountTool />} />
+        <Route path='/text/gradient' element={<GradientTool />} />
       </Routes>
     <Footer />
     </Container>
