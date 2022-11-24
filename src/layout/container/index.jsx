@@ -10,8 +10,8 @@ return (
 
 export const LayoutContainer = ({children}) => {
 return(
-<div className='w-full'>
-    <div className='w-8/12 sm:w-11/12 md:w-10/12 2xl:w-11/12 mx-auto p-4'>
+<div className='w-full bg-gray-50'>
+    <div className='w-8/12 sm:w-11/12 md:w-10/12 2xl:w-11/12 mx-auto'>
         {children}
     </div>
 </div>
@@ -20,7 +20,7 @@ return(
 
 export const AppContainer = ({children}) => {
 return(
-<div className='w-8/12 sm:w-11/12 md:w-10/12 2xl:w-11/12 mx-auto flex-grow py-8'>
+<div className='w-8/12 sm:w-11/12 md:w-10/12 2xl:w-11/12 mx-auto flex-grow py-16'>
     {children}
 </div>
 )

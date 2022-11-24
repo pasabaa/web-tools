@@ -9,28 +9,28 @@ export const CategoriesPage = () => {
     {
       title: 'Herramientas de Texto',
       description: 'Accede a diferentes elementos para crear textos, modifica y sé creativo con estas herramientas.',
-      icon: 'format-text',
+      icon: 'bi-type',
       textButton: 'Saber más',
       url: '/text'
     },
     {
       title: 'Herramientas de Imagen',
       description: 'Modifica una o varias imagénes con filtros, además recorta y crea figuras interesantes.',
-      icon: 'image',
+      icon: 'bi-images',
       textButton: 'Saber más',
       url: '/image'
     },
     {
       title: 'Herramientas de Color',
       description: 'Extrae color de imagénes de tu quipo o de algún sitio, modifica y genera tu propia paleta de colores.',
-      icon: 'color-bucket',
+      icon: 'bi-palette',
       textButton: 'Saber más',
       url: '/color'
     },
     {
       title: 'Conversiones',
       description: 'Descubre herramientas que te pueden ser de utilidad, además de aportar a tu productividad.',
-      icon: 'keyboard',
+      icon: 'bi-arrow-left-right',
       textButton: 'Saber más',
       url: '/categories'
     },
@@ -38,7 +38,7 @@ export const CategoriesPage = () => {
     {
       title: 'Herramientas Matemáticas',
       description: 'Descubre herramientas que te pueden ser de utilidad, además de aportar a tu productividad.',
-      icon: 'keyboard',
+      icon: 'bi-percent',
       textButton: 'Saber más',
       url: '/categories'
     },
@@ -46,7 +46,7 @@ export const CategoriesPage = () => {
     {
       title: 'Generadores',
       description: 'Descubre herramientas que te pueden ser de utilidad, además de aportar a tu productividad.',
-      icon: 'keyboard',
+      icon: 'bi-exclamation-triangle',
       textButton: 'Saber más',
       url: '/categories'
     }

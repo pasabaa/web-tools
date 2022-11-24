@@ -6,10 +6,25 @@ import axios from 'axios'
 export const FontTool = () => {
 
     const [nameFonts, setNameFonts] = useState([]);
-    const [currentFont, setCurrentFont] = useState('ABeeZee');
+    const [currentFont, setCurrentFont] = useState('Mukta');
     const [currentStyle, setCurrentStyle] = useState('font-thin');
 
+    const [value, setValue] = useState('');
+
     const [isLoading, setIsLoading] = useState(true);
+
+    const onChange = (event) => {
+
+      setValue(event.target.value);
+
+    }
+
+    const onSearch  = (searchTerm) => {
+      setValue(searchTerm)
+      setCurrentFont(searchTerm)
+      console.log('search', searchTerm)
+    }
+
 
     const getNameFonts = () => {
 
@@ -47,37 +62,36 @@ export const FontTool = () => {
 
             <div className='p-8 border border-dotted grid grid-cols-2 sm:grid-cols-1 gap-8'>
               <div className='text-gray-400'>
-                
+                <h1 className="text-xl font-bold text-gray-600 mb-4">Propiedades</h1>
                 <div className='flex gap-8'>
                     <div className='flex flex-col gap-2'>
-                        <label htmlFor="select-font" className='text-sm'>Selecciona una fuente</label>
-                        {
-                            isLoading ? 
-                                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                </svg> : 
-                                <select 
-                                    id='select-font' 
-                                    className="rounded-sm border p-2 text-xs font-bold text-gray-900 focus:outline-none" 
-                                    onChange={(e)=>{setCurrentFont(e.target.value)}}>
-                                    {
-                                    nameFonts.slice(0, 50).map((name) => {
+                        <label htmlFor="select-font" className='text-sm'>Busca una fuente</label>
+                        <div>
+                          <div className='flex gap-3'>
+                            <input className='bg-gray-50 border p-1 text-sm italic focus:not-italic focus:outline-none' type="text" value={value} onChange={onChange} placeholder={'Montserrat, Roboto, Lato, Nunito...'} />
+                            <button className='text-gray-100 bg-black  hover:bg-black/90 transition text-sm p-2' onClick={()=>onSearch(value)}>Probar</button>
+                          </div>
 
-                                        let face = new FontFace(name.family, `url(${name.files.regular})`)
+                          <div>
+                            {
+                              nameFonts.filter(item => {
+                                const searchTerm = value.toLowerCase();
+                                const name = item.family.toLowerCase();
+                                return searchTerm && name.includes(searchTerm) && name !== searchTerm;
+                              }).slice(0, 10)
+                              .map(name=>{
 
-                                        document.fonts.add(face);
+                                let face = new FontFace(name.family, `url(${name.files.regular})`)
 
-                                        return(
-                
-                                            <option value={name.family} key={name.family} style={{fontFamily: `${name.family}`}} >{name.family}</option>
+                                document.fonts.add(face);
 
-                                        )
-                                    })   
-                                    }
-                                </select>
-                        }
-
+                                return(
+                                  <div key={name.family} onClick={()=>onSearch(name.family)} style={{fontFamily: `${name.family}`}}>{name.family}</div>
+                                )
+                              })
+                            }
+                          </div>
+                        </div>
                     </div>
 
                     <div className='flex flex-col gap-2'>
