@@ -4,7 +4,7 @@ import { Footer } from './layout/footer';
 import { Navbar } from './layout/navbar';
 import { ContactPage } from './pages/contact';
 import { HomePage } from './pages/home';
-import { GradientTool, ImagePage, TextPage, CategoriesPage, LoremTool, CaseTool, CountTool } from './pages/tools';
+import { GradientTool, ImagePage, TextPage, CategoriesPage, LoremTool, CaseTool, CountTool, FontTool } from './pages/tools';
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
         <Route path='/text/case' element={<CaseTool />} />
         <Route path='/text/count' element={<CountTool />} />
         <Route path='/text/gradient' element={<GradientTool />} />
+        <Route path='/text/font' element={<FontTool />} />
       </Routes>
     <Footer />
     </Container>

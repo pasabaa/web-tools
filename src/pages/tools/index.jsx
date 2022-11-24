@@ -5,6 +5,7 @@ import { CategoriesPage } from "./categories";
 import { LoremTool } from "./lorem";
 import { CaseTool } from "./case";
 import { CountTool } from "./count";
+import { FontTool } from "./fonts";
 
 export {
     GradientTool,
@@ -13,5 +14,6 @@ export {
     CategoriesPage,
     LoremTool,
     CaseTool,
-    CountTool
+    CountTool,
+    FontTool
 }

@@ -39,7 +39,7 @@ export const TextPage = () => {
       icon: 'bi-journal-text',
       description: 'Prueba diferentes tipos de fuentes y escoje tu favorita.',
       textButton: 'Abrir',
-      url: '/color'
+      url: '/text/font'
     }
   ]
 
