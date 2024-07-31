@@ -68,7 +68,7 @@ export const FontTool = () => {
                         <label htmlFor="select-font" className='text-sm'>Busca una fuente</label>
                         <div>
                           <div className='flex gap-3'>
-                            <input className='bg-gray-50 border p-1 text-sm italic focus:not-italic focus:outline-none' type="text" value={value} onChange={onChange} placeholder={'Montserrat, Roboto, Lato, Nunito...'} />
+                            <input className='bg-gray-50 border p-1 text-sm italic focus:not-italic focus:outline-none' type="text" value={value} onChange={onChange} placeholder={'Montserrat, Roboto...'} />
                             <button className='text-gray-100 bg-black  hover:bg-black/90 transition text-sm p-2' onClick={()=>onSearch(value)}>Probar</button>
                           </div>
 

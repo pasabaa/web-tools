@@ -6,6 +6,7 @@ import { LoremTool } from "./lorem";
 import { CaseTool } from "./case";
 import { CountTool } from "./count";
 import { FontTool } from "./fonts";
+import { EditorTool } from "./editor";
 
 export {
     GradientTool,
@@ -15,5 +16,6 @@ export {
     LoremTool,
     CaseTool,
     CountTool,
-    FontTool
+    FontTool,
+    EditorTool
 }
